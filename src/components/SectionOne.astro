@@ -1,0 +1,72 @@
+---
+import Title from "../components/Title.astro";
+
+const items = [
+    {
+        id: 1,
+        title: "Pregunta cualquier cosa",
+        subtitle:
+            "Permite a los usuarios encontrar rápidamente respuestas a sus preguntas sin tener que buscar en múltiples fuentes.",
+        icon: "/icons/chat-dots.svg",
+    },
+    {
+        id: 2,
+        title: "Mejorar cada día",
+        subtitle:
+            "La aplicación utiliza procesamiento de lenguaje natural para comprender las consultas de los usuarios y brindar respuestas precisas y relevantes.",
+        icon: "/icons/arrows-angle-contract.svg",
+    },
+    {
+        id: 3,
+        title: "Conéctate en todas partes",
+        subtitle:
+            "Conéctese con el chatbot de IA desde cualquier lugar y en cualquier dispositivo, haciéndolo más accesible y conveniente.",
+        icon: "/icons/lightning-charge.svg",
+    },
+    {
+        id: 4,
+        title: "Personalización de respuestas:",
+        subtitle:
+            "Implementa la capacidad de personalizar las respuestas del chatbot según las preferencias del usuario.",
+        icon: "/icons/robot.svg",
+    },
+
+    {
+        id: 5,
+        title: "Análisis de sentimientos",
+        subtitle:
+            "Implementa un sistema de análisis de sentimientos para comprender las emociones detrás de las consultas de los usuarios.",
+        icon: "/icons/activity.svg",
+    },
+
+    {
+        id: 6,
+        title: "Respuestas Rápidas",
+        subtitle:
+            "Diseñado para proporcionarte respuestas rápidas y precisas a tus preguntas, recopilando información de múltiples fuentes y adaptándose a tus preferencias individuales",
+        icon: "/icons/lightning-charge.svg",
+    },
+];
+---
+
+<section
+    class="flex flex-col text-center w-full py-24 bg-[url('/assets/gradient.png')] bg-cover bg-center px-5"
+>
+    <Title
+        className="max-w-[800px] mx-auto"
+        title="Chatea de forma más inteligente, no más difícil con la IA"
+    />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1200px] mx-auto mt-12">
+        {
+            items.map((item) => (
+                <div class="bg-[url('/assets/benefits/image-2.png')] flex flex-col gap-y-2 text-left p-5 rounded-lg">
+                    <h5 class="text-2xl">{item.title}</h5>
+                    <p class="text-left text-gray-500">{item.subtitle}</p>
+                    <div class="flex items-end h-full mt-8">
+                        <img src={item.icon} class="fill-white" />
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
