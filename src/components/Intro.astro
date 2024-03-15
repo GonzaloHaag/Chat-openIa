@@ -72,7 +72,7 @@
 
 <script>
     const loader = document.querySelector("#loader");
-    const api = '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'; //para consumir la APIKEY desde aqui, debe tener el prefijo PUBLIC
+    const api = (await import.meta.env.PUBLIC_API_KEY); //para consumir la APIKEY desde aqui, debe tener el prefijo PUBLIC
     async function getCompletion(prompt: string) {
         loader?.classList.remove("hidden"); //muestro loader
         try {
